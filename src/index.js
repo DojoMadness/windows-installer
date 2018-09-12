@@ -37,7 +37,7 @@ export async function createWindowsInstaller(options) {
   outputDirectory = path.resolve(outputDirectory || 'installer');
 
   const vendorPath = path.join(__dirname, '..', 'vendor');
-  const vendorUpdate = path.join(vendorPath, 'Update.exe');
+  const vendorUpdate = path.join(vendorPath, 'Squirrel.exe');
   const appUpdate = path.join(appDirectory, 'Update.exe');
 
   await fsUtils.copy(vendorUpdate, appUpdate);
@@ -144,7 +144,7 @@ export async function createWindowsInstaller(options) {
     log(await spawn(cmd, args));
   }
 
-  cmd = path.join(vendorPath, 'Update.com');
+  cmd = path.join(vendorPath, 'Squirrel.com');
   args = [
     '--releasify', nupkgPath,
     '--releaseDir', outputDirectory,
@@ -152,7 +152,7 @@ export async function createWindowsInstaller(options) {
   ];
 
   if (useMono) {
-    args.unshift(path.join(vendorPath, 'Update-Mono.exe'));
+    args.unshift(path.join(vendorPath, 'Squirrel-Mono.exe'));
     cmd = monoExe;
   }
 
