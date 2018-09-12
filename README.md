@@ -7,6 +7,10 @@ NPM module that builds Windows installers for
 [Electron](https://github.com/atom/electron) apps using
 [Squirrel](https://github.com/Squirrel/Squirrel.Windows).
 
+## Dojo Madness Changes
+* added support for "framework-version" argument
+* added latest Squirrel build (https://github.com/Squirrel/Squirrel.Windows/commit/80d59ec381228ee72b6d600136b7a58f3e3030b0)
+
 ## Installing
 
 ```sh
@@ -64,6 +68,7 @@ There are several configuration settings supported:
 | `noDelta`             | No       | Should Squirrel.Windows delta packages? (disable only if necessary, they are a Good Thing) |
 | `remoteReleases`      | No       | A URL to your existing updates. If given, these will be downloaded to create delta updates |
 | `remoteToken`         | No       | Authentication token for remote updates |
+| `framework-version`   | No       | The required .NET framework version. Accepts the same values as Squirrel installer. |
 
 ## Sign your installer or else bad things will happen
 
