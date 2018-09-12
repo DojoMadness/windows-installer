@@ -177,6 +177,10 @@ export async function createWindowsInstaller(options) {
     args.push('--no-delta');
   }
 
+  if (options.frameworkVersion) {
+    args.push(`--framework-version=${options.frameworkVersion}`);
+  }
+
   log(await spawn(cmd, args));
 
   if (options.fixUpPaths !== false) {
